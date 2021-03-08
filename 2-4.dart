@@ -89,7 +89,11 @@ numberBook.addAll({'Екатерина': 2359942});
 
 // d. Отсортировать карту в обратном порядке по ключам и вывести на экран результат.
 
-for (var item in numberBook.entries) {print("{item.key[1]} : ${item.value}");};
+var mapEntries = numberBook.entries.toList();
+mapEntries.sort((a, b) => b.key.compareTo(a.key));
+numberBook = Map.fromEntries(mapEntries);
+  
+for (var item in numberBook.entries) {print("${item.key} : ${item.value}");};
 
 // 10. Set
 // a. Создать Set строк с именем mySet и данными {‘Москва’, ‘Вашингтон’, ‘Париж’}
