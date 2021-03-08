@@ -81,7 +81,7 @@ Map <String, int> numberBook = {
 
 // b. Вывести на экран весь телефонный справочник numberBook.
 
-print(numberBook);
+for (var item in numberBook.entries) {print("${item.key} : ${item.value}");};
 
 // c. Вставить новый номер в карту: Екатерина:2359942 
 
@@ -89,7 +89,7 @@ numberBook.addAll({'Екатерина': 2359942});
 
 // d. Отсортировать карту в обратном порядке по ключам и вывести на экран результат.
 
-if(a.isEven) {print('a is even');}
+for (var item in numberBook.entries) {print("{item.key[1]} : ${item.value}");};
 
 // 10. Set
 // a. Создать Set строк с именем mySet и данными {‘Москва’, ‘Вашингтон’, ‘Париж’}
@@ -107,3 +107,12 @@ print(mySet.length); //длина 3, т.к. уникальное имя "Ваш�
 // So if she sells sea shells on the sea shore,
 // I'm sure that the shells are sea shore shells”
 
+const text = '''
+She sells sea shells on the sea shore
+The shells that she sells are sea shells I'm sure
+So if she sells sea shells on the sea shore
+I'm sure that the shells are sea shore shells
+''';
+
+final words = text.trim().split(RegExp(r'\s+'));
+print('количество слов: ${words.length}');
