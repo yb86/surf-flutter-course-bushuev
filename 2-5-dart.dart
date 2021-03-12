@@ -65,5 +65,23 @@ void main() {
 // 3. Написать программу, которая слушает ввод в консоли, складывает вводимые пользователем числа. 
 // Если пользователь ввел stop, завершить приложение. Если пользователь вводит некорректные данные - прервать текущую итерацию, начать заново.
 
-!!! Дайте, пожалуйста, ссылку - как создать консольное приложение в Android Studio.
+import 'dart:convert';
+import 'dart:io';
+
+void main() {
+  int res = 0;
+  print(
+      'Введите числа для добавления к результату. Для вывода результата введите "stop" ');
+  do {
+    final input = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
+    if (input == 'stop') {
+      break;
+    }
+    final int num = int.tryParse(input);
+    if (num != null) {
+      res += num;
+    }
+  } while (true);
+  print('Сумма введенных чисел: $res');
+}
 
